@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         imgimagen = (ImageView) findViewById(R.id.imgfoto);
         btnfoto = (Button) findViewById(R.id.btnfoto);
-        text = (TextView) findViewById(R.id.textView2);
+        //text = (TextView) findViewById(R.id.textView2);
         textvie = (TextView) findViewById(R.id.text);
         imgimagen.setDrawingCacheEnabled(true);
         imgimagen.buildDrawingCache();
@@ -53,15 +53,33 @@ public class MainActivity extends AppCompatActivity
                 int g=Color.green(pixel);
                 int b=Color.blue(pixel);
 
-                if ((r>=180) && (r<=213)){
-                    if((g>=185) && (g<=210)){
+                if ((r>=140) && (r<=160)){
+                    if((g>=130) && (g<=150)){
 
-                        textvie.setText("Primera fase");
+                        //textvie.setText("Primera fase");
+                        Toast.makeText(MainActivity.this,"PRIMERA FASE",Toast.LENGTH_LONG).show();
 
                     }
                 }
-               text.setBackgroundColor(Color.rgb(r,g,b));
-               text.setText("R: "+r+"\n"+"G: "+g+"\n"+"B: "+b);
+                if ((r>=160) && (r<=180)){
+                    if((g>=100) && (g<=120)){
+
+                        //textvie.setText("segunda fase");
+                        Toast.makeText(MainActivity.this,"SEGUNDA FASE",Toast.LENGTH_LONG).show();
+
+                    }
+                }
+
+                if ((r>=165) && (r<=190)){
+                    if((g>=60) && (g<=90)){
+
+                        //textvie.setText("Tercera fase");
+                        Toast.makeText(MainActivity.this,"TERCERA FASE Y LISTA PARA CONSUMIR",Toast.LENGTH_LONG).show();
+
+                    }
+                }
+               //text.setBackgroundColor(Color.rgb(r,g,b));
+               //text.setText("R: "+r+"\n"+"G: "+g+"\n"+"B: "+b);
 
                 return true;
             }
