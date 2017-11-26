@@ -1,5 +1,6 @@
 package com.example.wolfware.agroapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -34,9 +35,9 @@ public class MainActivity extends Activity {
 
     }
 
-    OnTouchListener imgSourceOnTouchListener
-            = new OnTouchListener(){
+    OnTouchListener imgSourceOnTouchListener = new OnTouchListener(){
 
+        @SuppressLint("SetTextI18n")
         @Override
         public boolean onTouch(View view, MotionEvent event) {
 
@@ -51,22 +52,13 @@ public class MainActivity extends Activity {
             int x = Integer.valueOf((int)eventXY[0]);
             int y = Integer.valueOf((int)eventXY[1]);
 
-            touchedXY.setText(
-                    "touched position: "
-                            + String.valueOf(eventX) + " / "
-                            + String.valueOf(eventY));
-            invertedXY.setText(
-                    "touched position: "
-                            + String.valueOf(x) + " / "
-                            + String.valueOf(y));
+            touchedXY.setText("touched position: " + String.valueOf(eventX) + " / " + String.valueOf(eventY));
+            invertedXY.setText("touched position: " + String.valueOf(x) + " / " + String.valueOf(y));
 
             Drawable imgDrawable = ((ImageView)view).getDrawable();
             Bitmap bitmap = ((BitmapDrawable)imgDrawable).getBitmap();
 
-            imgSize.setText(
-                    "drawable size: "
-                            + String.valueOf(bitmap.getWidth()) + " / "
-                            + String.valueOf(bitmap.getHeight()));
+            imgSize.setText("drawable size: " + String.valueOf(bitmap.getWidth()) + " / " + String.valueOf(bitmap.getHeight()));
 
             //Limit x, y range within bitmap
             if(x < 0){
