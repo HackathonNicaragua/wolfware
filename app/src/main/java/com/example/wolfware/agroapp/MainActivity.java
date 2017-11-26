@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
     //Necesitamos un Boton y un imageView
     private Button bt_hacerfoto;
     private ImageView img;
+    private ImageView imgv;
 
 
 
@@ -29,13 +30,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Relacionamos con el XML
-        img = (ImageView)this.findViewById(R.id.imageView1);
+        imgv = (ImageView)this.findViewById(R.id.imageView1);
         bt_hacerfoto = (Button) this.findViewById(R.id.button1);
 
-        img.setOnTouchListener(new OnTouchListener() {
+        imgv.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Bitmap bmpResult = ((BitmapDrawable)img.getDrawable()).getBitmap();
+                Bitmap bmpResult = ((BitmapDrawable)imgv.getDrawable()).getBitmap();
                 try{
                     // Obtener las coordenadas sobre el imageView
                     int x = (int)event.getX();
