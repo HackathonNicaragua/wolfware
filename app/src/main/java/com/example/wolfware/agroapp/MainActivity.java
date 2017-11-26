@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        imgimagen = (ImageView) findViewById(R.id.imageView);
+        imgimagen = (ImageView) findViewById(R.id.imgfoto);
         btnfoto = (Button) findViewById(R.id.btnfoto);
         text = (TextView) findViewById(R.id.textView2);
         imgimagen.setDrawingCacheEnabled(true);
@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity
                 int b=Color.blue(pixel);
 
                text.setBackgroundColor(Color.rgb(r,g,b));
-                Toast.makeText(MainActivity.this,"hola",Toast.LENGTH_SHORT).show();
                text.setText("R: "+r+"\n"+"G: "+g+"\n"+"B: "+b);
 
                 return false;
