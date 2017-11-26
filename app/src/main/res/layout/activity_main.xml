@@ -12,12 +12,5 @@
         android:layout_height="391dp"
         android:src="@mipmap/logo" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-
-        android:layout_height="match_parent"
-        android:background="@drawable/ic_launcher_background" />
-
 
 </LinearLayout>
