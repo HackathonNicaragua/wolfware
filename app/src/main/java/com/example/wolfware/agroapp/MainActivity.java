@@ -94,8 +94,7 @@ public class MainActivity extends Activity {
                 Intent cameraIntent = new Intent(
                         android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                 //Creamos una carpeta en la memoria del terminal
-                File imagesFolder = new File(
-                        Environment.getExternalStorageDirectory(), "Agroapp");
+                File imagesFolder = new File(Environment.getExternalStorageDirectory(), "Agroapp");
                 imagesFolder.mkdirs();
                 //añadimos el nombre de la imagen
                 File image = new File(imagesFolder, "foto.jpg");
@@ -119,7 +118,7 @@ public class MainActivity extends Activity {
 
             //Añadimos el bitmap al imageView para
             //mostrarlo por pantalla
-            Toast.makeText(MainActivity.this,"se guardo correctamente",Toast.LENGTH_SHORT);
+            Toast.makeText(MainActivity.this,"se guardo correctamente",Toast.LENGTH_SHORT).show();
             img.setImageBitmap(bMap);
         }
     }
