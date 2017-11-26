@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         imgv = (ImageView)this.findViewById(R.id.imageView1);
         bt_hacerfoto = (Button) this.findViewById(R.id.button1);
 
-        imgv.setOnTouchListener(new OnTouchListener() {
+       /* imgv.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Bitmap bmpResult = ((BitmapDrawable)img.getDrawable()).getBitmap();
@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
                 }
                 return true;
             }
-        });
+        });*/
 
 
         //Añadimos el Listener Boton
