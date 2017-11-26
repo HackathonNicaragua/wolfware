@@ -111,11 +111,11 @@ public class MainActivity extends Activity {
         if (requestCode == 1 && resultCode == RESULT_OK) {
             //Creamos un bitmap con la imagen recientemente
             //almacenada en la memoria
-            int i=0;
+
             Bitmap bMap = BitmapFactory.decodeFile(
                     Environment.getExternalStorageDirectory()+
-                            "/AgroApp/"+"foto"+i+".jpg");
-                         i++;
+                            "/AgroApp/"+"foto.jpg");
+
             //Añadimos el bitmap al imageView para
             //mostrarlo por pantalla
             img.setImageBitmap(bMap);
