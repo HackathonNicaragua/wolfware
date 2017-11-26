@@ -32,8 +32,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Relacionamos con el XML
-        img=(ImageView)this.findViewById(R.id.imageView2);
-        imgv = (ImageView)this.findViewById(R.id.imageView1);
+        img=(ImageView)this.findViewById(R.id.imageView1);
+       // imgv = (ImageView)this.findViewById(R.id.imageView1);
         bt_hacerfoto = (Button) this.findViewById(R.id.button1);
 
        /* imgv.setOnTouchListener(new OnTouchListener() {
