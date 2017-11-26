@@ -1,16 +1,13 @@
 package com.example.wolfware.agroapp;
 
 
-import android.annotation.SuppressLint;
 
 import android.graphics.Color;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.graphics.Matrix;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -26,13 +23,10 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         texto= (TextView) findViewById(R.id.textView);
         imagen= (ImageView) findViewById(R.id.imageView);
-
         imagen.setDrawingCacheEnabled(true);
         imagen.buildDrawingCache();
-
         imagen.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -48,8 +42,6 @@ public class MainActivity extends Activity {
                 return false;
             }
         });
-
-
     }
 
 
