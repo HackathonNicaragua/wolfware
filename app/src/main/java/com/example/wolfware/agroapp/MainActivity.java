@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
         imgv.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Bitmap bmpResult = ((BitmapDrawable)imgv.getDrawable()).getBitmap();
+                Bitmap bmpResult = ((BitmapDrawable)img.getDrawable()).getBitmap();
                 try{
                     // Obtener las coordenadas sobre el imageView
                     int x = (int)event.getX();
