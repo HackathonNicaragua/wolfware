@@ -2,7 +2,7 @@ package com.example.wolfware.agroapp;
 
 import java.io.File;
 
-import android.annotation.SuppressLint;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -18,7 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.view.View.OnTouchListener;
-import android.widget.TextView;
+
 
 public class MainActivity extends Activity {
     //Necesitamos un Boton y un imageView
@@ -114,10 +114,10 @@ public class MainActivity extends Activity {
             Bitmap bMap = BitmapFactory.decodeFile(
                     Environment.getExternalStorageDirectory()+
                             "/AgroApp/"+"foto"+i+".jpg");
-            i++;
+                         i++;
             //Añadimos el bitmap al imageView para
             //mostrarlo por pantalla
-            img.setImageBitmap(bMap);
+            imgv.setImageBitmap(bMap);
         }
     }
 }
