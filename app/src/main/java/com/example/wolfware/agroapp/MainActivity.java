@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity
     Button btnfoto;
     Bitmap map;
     TextView text;
+    TextView textvie;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity
         imgimagen = (ImageView) findViewById(R.id.imgfoto);
         btnfoto = (Button) findViewById(R.id.btnfoto);
         text = (TextView) findViewById(R.id.textView2);
+        textvie = (TextView) findViewById(R.id.text);
         imgimagen.setDrawingCacheEnabled(true);
         imgimagen.buildDrawingCache();
         imgimagen.setOnTouchListener(new View.OnTouchListener() {
@@ -51,6 +53,13 @@ public class MainActivity extends AppCompatActivity
                 int g=Color.green(pixel);
                 int b=Color.blue(pixel);
 
+                if ((r>=180) && (r<=213)){
+                    if((g>=185) && (g<=210)){
+
+
+
+                    }
+                }
                text.setBackgroundColor(Color.rgb(r,g,b));
                text.setText("R: "+r+"\n"+"G: "+g+"\n"+"B: "+b);
 
