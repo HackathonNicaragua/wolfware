@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
         imgimagen.buildDrawingCache();
         imgimagen.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public boolean onTouch(View view, MotionEvent event) {
                 if(event.getAction()==MotionEvent.ACTION_DOWN||event.getAction()==MotionEvent.ACTION_MOVE)
                     map=imgimagen.getDrawingCache();
                 int pixel=map.getPixel((int) event.getX(), (int) event.getY());
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity
                text.setBackgroundColor(Color.rgb(r,g,b));
                text.setText("R: "+r+"\n"+"G: "+g+"\n"+"B: "+b);
 
-                return false;
+                return true;
             }
         });
         btnfoto.setOnClickListener(new View.OnClickListener() {
