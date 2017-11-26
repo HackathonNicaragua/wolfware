@@ -1,14 +1,8 @@
 <resources>
-    <string name="app_name">AgroApp</string>
-    <string name="title_activity_principal">Principal</string>
+    <string name="app_name">agroapp</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="inverted_touched_position">inverted touched position:</string>
-    <string name="touched_position">touched position:</string>
-    <string name="drawable_size">drawable size:</string>
-    <string name="touched_color">touched color:</string>
-    <string name="todo">TODO</string>
 </resources>
