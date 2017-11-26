@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.view.View.OnTouchListener;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -118,6 +119,7 @@ public class MainActivity extends Activity {
 
             //Añadimos el bitmap al imageView para
             //mostrarlo por pantalla
+            Toast.makeText(MainActivity.this,"se guardo correctamente",Toast.LENGTH_SHORT);
             img.setImageBitmap(bMap);
         }
     }
