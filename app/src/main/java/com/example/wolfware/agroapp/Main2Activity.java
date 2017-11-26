@@ -1,18 +1,12 @@
 package com.example.wolfware.agroapp;
 
-import android.Manifest;
-import android.content.Context;
+
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
-
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.telephony.TelephonyManager;
-
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -21,10 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity {
-    TextView txtmensaje;
     ImageView imgimagen;
     Button btnfoto;
-    TextView texto;
     Bitmap map;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
