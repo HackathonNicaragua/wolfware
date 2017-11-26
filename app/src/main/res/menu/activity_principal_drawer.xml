@@ -14,7 +14,7 @@
             android:title="Manuales" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Enlaces">
         <menu>
             <item
                 android:id="@+id/nav_share"
