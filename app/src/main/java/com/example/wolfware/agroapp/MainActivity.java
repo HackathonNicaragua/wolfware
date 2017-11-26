@@ -1,6 +1,10 @@
 package com.example.wolfware.agroapp;
 
+<<<<<<< HEAD
 import android.annotation.SuppressLint;
+=======
+import android.graphics.Color;
+>>>>>>> 2730a7d0327f641be197d45a2471e3dc980dbd24
 import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -14,15 +18,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-
-    TextView touchedXY, invertedXY, imgSize, colorRGB;
-    ImageView imgSource1, imgSource2;
+    ImageView imagen;
+    TextView texto;
+    Bitmap map;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
         touchedXY = (TextView)findViewById(R.id.xy);
         invertedXY = (TextView)findViewById(R.id.invertedxy);
         imgSize = (TextView)findViewById(R.id.size);
@@ -71,14 +76,32 @@ public class MainActivity extends Activity {
                 y = 0;
             }else if(y > bitmap.getHeight()-1){
                 y = bitmap.getHeight()-1;
+=======
+        texto= (TextView) findViewById(R.id.textView);
+        imagen= (ImageView) findViewById(R.id.imageView);
+
+        imagen.setDrawingCacheEnabled(true);
+        imagen.buildDrawingCache();
+
+        imagen.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction()==MotionEvent.ACTION_DOWN||event.getAction()==MotionEvent.ACTION_MOVE)
+                    map=imagen.getDrawingCache();
+                    int pixel=map.getPixel((int) event.getX(), (int) event.getY());
+                    int r= Color.red(pixel);
+                    int g=Color.green(pixel);
+                    int b=Color.blue(pixel);
+
+                    texto.setBackgroundColor(Color.rgb(r,g,b));
+                    texto.setText("R: "+r+"\n"+"G: "+g+"\n"+"B: "+b);
+                return false;
+>>>>>>> 2730a7d0327f641be197d45a2471e3dc980dbd24
             }
+        });
 
-            int touchedRGB = bitmap.getPixel(x, y);
 
-            colorRGB.setText("touched color: " + "#" + Integer.toHexString(touchedRGB));
-            colorRGB.setTextColor(touchedRGB);
+    }
 
-            return true;
-        }};
 
 }
