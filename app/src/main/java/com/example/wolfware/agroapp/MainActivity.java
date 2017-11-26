@@ -1,6 +1,8 @@
 package com.example.wolfware.agroapp;
 
 import java.io.File;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -27,6 +29,7 @@ public class MainActivity extends Activity {
 
 
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +67,7 @@ public class MainActivity extends Activity {
                     int iColor = Color.argb(255, rval, gval, bval);
 
 
-                   txtRes.setBackgroundColor(iColor);
+                   //txtRes.setBackgroundColor(iColor);
 
                     // Calculo el CMYK Esto es de YAPA
                     double rr = rval/ 255.0000;
