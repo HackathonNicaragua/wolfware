@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity
                text.setBackgroundColor(Color.rgb(r,g,b));
                text.setText("R: "+r+"\n"+"G: "+g+"\n"+"B: "+b);
 
-                return true;
+                return false;
             }
         });
         btnfoto.setOnClickListener(new View.OnClickListener() {
