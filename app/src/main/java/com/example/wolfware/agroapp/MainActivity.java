@@ -16,12 +16,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.view.View.OnTouchListener;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
     //Necesitamos un Boton y un imageView
     private Button bt_hacerfoto;
     private ImageView img;
     private ImageView imgv;
+    TextView txtRes;
 
 
 
@@ -32,6 +34,7 @@ public class MainActivity extends Activity {
         //Relacionamos con el XML
         imgv = (ImageView)this.findViewById(R.id.imageView1);
         bt_hacerfoto = (Button) this.findViewById(R.id.button1);
+        txtRes = (TextView) this.findViewById(R.id.textView);
 
         imgv.setOnTouchListener(new OnTouchListener() {
             @Override
@@ -61,7 +64,7 @@ public class MainActivity extends Activity {
                     int iColor = Color.argb(255, rval, gval, bval);
 
 
-                   // txtRes.setBackgroundColor(iColor);
+                   txtRes.setBackgroundColor(iColor);
 
                     // Calculo el CMYK Esto es de YAPA
                     double rr = rval/ 255.0000;
