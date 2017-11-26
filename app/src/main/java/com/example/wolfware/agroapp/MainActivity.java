@@ -25,11 +25,7 @@ public class MainActivity extends Activity {
     private Button bt_hacerfoto;
     private ImageView img;
     private ImageView imgv;
-    TextView txtRes;
 
-
-
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +33,6 @@ public class MainActivity extends Activity {
         //Relacionamos con el XML
         imgv = (ImageView)this.findViewById(R.id.imageView1);
         bt_hacerfoto = (Button) this.findViewById(R.id.button1);
-        txtRes = (TextView) this.findViewById(R.id.textView);
 
         imgv.setOnTouchListener(new OnTouchListener() {
             @Override
@@ -108,7 +103,6 @@ public class MainActivity extends Activity {
                 //Lanzamos la aplicacion de la camara con retorno (forResult)
                 startActivityForResult(cameraIntent, 1);
             }});
-        //
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -116,9 +110,11 @@ public class MainActivity extends Activity {
         if (requestCode == 1 && resultCode == RESULT_OK) {
             //Creamos un bitmap con la imagen recientemente
             //almacenada en la memoria
+            int i=0;
             Bitmap bMap = BitmapFactory.decodeFile(
                     Environment.getExternalStorageDirectory()+
-                            "/AgroApp/"+"foto.jpg");
+                            "/AgroApp/"+"foto"+i+".jpg");
+            i++;
             //Añadimos el bitmap al imageView para
             //mostrarlo por pantalla
             img.setImageBitmap(bMap);
