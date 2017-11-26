@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity
                 if ((r>=180) && (r<=213)){
                     if((g>=185) && (g<=210)){
 
-
+                        textvie.setText("Primera fase");
 
                     }
                 }
