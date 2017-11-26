@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Relacionamos con el XML
+        img=(ImageView)this.findViewById(R.id.imageView2);
         imgv = (ImageView)this.findViewById(R.id.imageView1);
         bt_hacerfoto = (Button) this.findViewById(R.id.button1);
 
@@ -117,7 +118,7 @@ public class MainActivity extends Activity {
                          i++;
             //Añadimos el bitmap al imageView para
             //mostrarlo por pantalla
-            imgv.setImageBitmap(bMap);
+            img.setImageBitmap(bMap);
         }
     }
 }
