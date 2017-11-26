@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.provider.MediaStore;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity
                 int b=Color.blue(pixel);
 
                text.setBackgroundColor(Color.rgb(r,g,b));
+                Toast.makeText(MainActivity.this,"hola",Toast.LENGTH_SHORT).show();
                text.setText("R: "+r+"\n"+"G: "+g+"\n"+"B: "+b);
 
                 return false;
