@@ -24,7 +24,7 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_bar_principal);
+        setContentView(R.layout.content_principal);
         //
         btnfoto = (Button) findViewById(R.id.btnfoto);
         imgimagen = (ImageView) findViewById(R.id.imgfoto);
