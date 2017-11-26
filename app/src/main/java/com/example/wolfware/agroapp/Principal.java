@@ -1,8 +1,13 @@
 package com.example.wolfware.agroapp;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,16 +17,47 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageView;
+
+import static com.example.wolfware.agroapp.Main2Activity.REQUEST_IMAGE_CAPTURE;
 
 public class Principal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    ImageView imgimagen;
+    Button btnfoto;
+    Bitmap map;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        btnfoto = (Button) findViewById(R.id.btnfoto);
+        imgimagen = (ImageView) findViewById(R.id.imgfoto);
+        btnfoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                llamarIntent();
+            }
+        });
+
+        imgimagen.setDrawingCacheEnabled(true);
+        imgimagen.buildDrawingCache();
+        imgimagen.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction()==MotionEvent.ACTION_DOWN||event.getAction()==MotionEvent.ACTION_MOVE)
+                    map=imgimagen.getDrawingCache();
+                int pixel=map.getPixel((int) event.getX(), (int) event.getY());
+                int r= Color.red(pixel);
+                int g=Color.green(pixel);
+                int b=Color.blue(pixel);
+
+                return false;
+            }
+        });
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -34,6 +70,21 @@ public class Principal extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    private void llamarIntent () {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    @Override
+    protected void onActivityResult (int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imgimagen.setImageBitmap(imageBitmap);
+        }
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
