@@ -2,10 +2,12 @@ package com.example.wolfware.agroapp;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,12 +20,14 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.provider.MediaStore;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     ImageView imgimagen;
     Button btnfoto;
     Bitmap map;
+    TextView text;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,25 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         imgimagen = (ImageView) findViewById(R.id.imageView);
         btnfoto = (Button) findViewById(R.id.btnfoto);
+        text = (TextView) findViewById(R.id.textView2);
+        imgimagen.setDrawingCacheEnabled(true);
+        imgimagen.buildDrawingCache();
+        imgimagen.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction()==MotionEvent.ACTION_DOWN||event.getAction()==MotionEvent.ACTION_MOVE)
+                    map=imgimagen.getDrawingCache();
+                int pixel=map.getPixel((int) event.getX(), (int) event.getY());
+                int r= Color.red(pixel);
+                int g=Color.green(pixel);
+                int b=Color.blue(pixel);
+
+               text.setBackgroundColor(Color.rgb(r,g,b));
+               text.setText("R: "+r+"\n"+"G: "+g+"\n"+"B: "+b);
+
+                return false;
+            }
+        });
         btnfoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
