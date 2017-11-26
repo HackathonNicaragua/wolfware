@@ -1,6 +1,10 @@
 package com.example.wolfware.agroapp;
 
+
+import android.annotation.SuppressLint;
+
 import android.graphics.Color;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -22,7 +26,7 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//
+
         texto= (TextView) findViewById(R.id.textView);
         imagen= (ImageView) findViewById(R.id.imageView);
 
